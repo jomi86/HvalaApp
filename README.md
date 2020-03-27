@@ -1,4 +1,4 @@
-# hvala
+# Hvala
 
 Aplikacija za lakšu pomoć u nevolji
 
