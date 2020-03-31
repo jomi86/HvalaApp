@@ -30,7 +30,7 @@ class TabNavigator extends StatelessWidget {
             title: tabName[tabItem],
           ),
       TabNavigatorRoutes.call: (context) => CallScreen(
-            title: tabName[tabItem],
+            title: "sdasdas",
           ),
     };
   }
