@@ -14,34 +14,41 @@ class DonateScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          title,
+        appBar: AppBar(
+          title: Text(
+            title,
+          ),
         ),
-      ),
-      body: ListView.builder(
-        itemCount: titles.length,
-        itemBuilder: (context, index) {
-          return Card(
-            //                           <-- Card widget
-            child: ListTile(
-              title: Text(
-                titles[index],
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 18.0,
-                    letterSpacing: 2.0,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.bold),
-              ),
-              contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
-              onTap: () {
-                print(titles[index]);
-              },
-            ),
-          );
-        },
-      ),
-    );
+        body: Column(
+          children: <Widget>[
+            MaterialButton(
+              onPressed: () => print('sss'),
+            )
+          ],
+        )
+//      ListView.builder(
+//        itemCount: titles.length,
+//        itemBuilder: (context, index) {
+//          return Card(
+//            //                           <-- Card widget
+//            child: ListTile(
+//              title: Text(
+//                titles[index],
+//                textAlign: TextAlign.center,
+//                style: TextStyle(
+//                    fontSize: 18.0,
+//                    letterSpacing: 2.0,
+//                    fontStyle: FontStyle.normal,
+//                    fontWeight: FontWeight.bold),
+//              ),
+//              contentPadding: EdgeInsets.symmetric(horizontal: 20.0),
+//              onTap: () {
+//                print(titles[index]);
+//              },
+//            ),
+//          );
+//        },
+//      ),
+        );
   }
 }

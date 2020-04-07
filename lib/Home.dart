@@ -28,7 +28,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
+        title: const Text('Hvala!'),
+        backgroundColor: Colors.red,
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
