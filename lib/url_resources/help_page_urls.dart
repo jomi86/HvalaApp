@@ -6,6 +6,12 @@ const List<Map<String, String>> help_page_urls = [
     "url": VOLUNTEER_RED_CROSS_INFO_PAGE,
     "type": "url"
   },
+  {"Name": "Akcija 'Super Komša'", "url": SUPER_KOMSA_PAGE, "type": "url"},
+  {
+    "Name": "Vlada Republike Srbije - 'Budi volonter'",
+    "url": VOLUNTEER_NURDOR_PAGE,
+    "type": "url"
+  },
   {
     "Name": "Volontiraj u NURDOR-u",
     "url": VOLUNTEER_NURDOR_PAGE,

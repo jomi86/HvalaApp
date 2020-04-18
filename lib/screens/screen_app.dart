@@ -44,8 +44,8 @@ class _ScreenAppState extends State<ScreenApp> {
               children: <Widget>[
                 PageDonate(),
                 PageHelp(),
-                PageLearn(),
-                PageCall()
+                PageCall(),
+                PageLearn()
               ],
               index: _selectedIndex,
             ),
@@ -84,15 +84,15 @@ class _ScreenAppState extends State<ScreenApp> {
                 index: 2,
                 selectedIndex: _getSelectedIndex,
                 setSelectedIndex: _setSelectedIndex,
-                iconData: Icons.add_shopping_cart,
-                text: 'Nauči'.toUpperCase(),
+                iconData: Icons.add_call,
+                text: 'Pozovi'.toUpperCase(),
               ),
               TabBarButton(
                 index: 3,
                 selectedIndex: _getSelectedIndex,
                 setSelectedIndex: _setSelectedIndex,
-                iconData: Icons.add_call,
-                text: 'Pozovi'.toUpperCase(),
+                iconData: Icons.add_shopping_cart,
+                text: 'Nauči'.toUpperCase(),
               ),
 //              TabBarButton(
 //                index: 3,

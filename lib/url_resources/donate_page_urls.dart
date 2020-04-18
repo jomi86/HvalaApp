@@ -7,6 +7,11 @@ const List<Map<String, String>> donate_page_urls = [
     "url": DONATE_FOOD_MAJKA_9_JUGOVICA_PAGE,
     "type": "url"
   },
+  {
+    "Name": "Doniraj hranu - Donorum",
+    "url": DONATE_FOOD_DONORUM_PAGE,
+    "type": "url"
+  },
   {"Name": "NURDOR donacije", "url": DONATE_NURDOR_PAGE, "type": "url"},
   {
     "Name": "Centar za integraciju mladih - Svratište",
@@ -22,6 +27,12 @@ const List<Map<String, String>> donate_page_urls = [
   {
     "Name": "Humaniatrna organizacija 'Budi human'",
     "url": DONATE_MONEY_BUDI_HUMAN_PAGE,
+    "type": "url"
+  },
+  {"Name": "Fondacija 'Divac'", "url": DONATE_MONEY_DIVAC_PAGE, "type": "url"},
+  {
+    "Name": "Platforma 'Srbija Daruje'",
+    "url": DONATE_SRBIJA_DARUJE_INFO_PAGE,
     "type": "url"
   },
 ];
