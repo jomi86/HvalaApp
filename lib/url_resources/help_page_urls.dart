@@ -12,21 +12,6 @@ const List<Map<String, String>> help_page_urls = [
     "type": "url"
   },
   {"Name": "Daj krv", "url": GIVE_BLOOD_INFO_PAGE, "type": "url"},
-  {
-    "Name": "Pomozi starijim licima",
-    "url": OLDER_PEOPLE_INFO_PAGE,
-    "type": "url"
-  },
-  {
-    "Name": "Pomozi slabovidim osobama",
-    "url": VISUALLY_IMPAIRED_INFO_PAGE,
-    "type": "url"
-  },
-  {
-    "Name": "Pomozi nagluvim osobama",
-    "url": DEAF_PEOPLE_INFO_PAGE,
-    "type": "url"
-  },
   {"Name": "Crveni Krst", "url": RED_CROSS_INFO_PAGE, "type": "url"},
   {
     "Name": "Prihvatilište za odrasle",

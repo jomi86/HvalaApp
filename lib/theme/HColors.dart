@@ -5,7 +5,9 @@ class HColors {
 
   static Color lightPrimaryColor() => _lightPrimary;
 
-  static Color buttonColor() => _lightPrimary;
+  static Color buttonColor() => _darkPrimary;
+
+  static Color backgroundColor() => Colors.white;
 
   static Color white() => Colors.white;
 

@@ -34,6 +34,9 @@ class _ScreenAppState extends State<ScreenApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Hvala", style: HTextStyle.appTitle(context)),
+      ),
       body: SafeArea(
         child: Stack(
           children: <Widget>[

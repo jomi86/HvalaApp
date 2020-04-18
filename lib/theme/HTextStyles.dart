@@ -9,6 +9,9 @@ class HTextStyle {
         color: HColors.white(),
       );
 
+  static TextStyle appTitle(BuildContext context) => defaultTestStyle(context)
+      .copyWith(fontSize: 28.0, color: HColors.white());
+
   static TextStyle titleRegular(BuildContext context) =>
       defaultTestStyle(context).copyWith(fontSize: 20.0);
 
