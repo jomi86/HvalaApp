@@ -14,13 +14,15 @@ class HTextStyle {
 
   static TextStyle subtitleRegular(BuildContext context) =>
       defaultTestStyle(context)
-          .copyWith(fontSize: 16.0, color: HColors.darkGrey());
+          .copyWith(fontSize: 16.0, color: HColors.textLight());
 
-  static TextStyle labelError(BuildContext context) => defaultTestStyle(context)
-      .copyWith(fontSize: 12.0, color: HColors.primaryRed());
+  static TextStyle tabBarRegular(BuildContext context) =>
+      defaultTestStyle(context)
+          .copyWith(fontSize: 12.0, color: HColors.textLight());
 
-  static TextStyle formFieldLabel(BuildContext context) =>
-      defaultTestStyle(context).copyWith(fontSize: 16.0);
+  static TextStyle tabBarSelected(BuildContext context) =>
+      defaultTestStyle(context)
+          .copyWith(fontSize: 12.0, color: HColors.primaryColor());
 
   static TextStyle defaultTestStyle(BuildContext context) => TextStyle(
       fontFamily: "Roboto",

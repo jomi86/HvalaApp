@@ -1,5 +1,5 @@
+import 'package:Hvala/theme/HTextStyles.dart';
 import 'package:flutter/material.dart';
-import 'package:hvala/theme/HTextStyles.dart';
 
 class SimpleRowButton extends StatelessWidget {
   final Function() onPressedAction;

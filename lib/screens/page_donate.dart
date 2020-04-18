@@ -1,55 +1,44 @@
+import 'package:Hvala/custom_widgets/row_button_simple.dart';
+import 'package:Hvala/models/model_simple_list_item.dart';
+import 'package:Hvala/url_resources/donate_page_urls.dart';
+import 'package:Hvala/utils/item_actions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hvala/custom_widgets/row_button_simple.dart';
 
-class PageDonate extends StatelessWidget {
-  _donateMoney() {}
+class PageDonate extends StatefulWidget {
+  @override
+  _PageDonateState createState() => _PageDonateState();
+}
 
-  _donateFood() {}
+class _PageDonateState extends State<PageDonate> {
+  final List<Map> donateUrlsJsonList = donate_page_urls;
+  List<SimpleListItem> urls;
+  List<SimpleListItem> urlsAll;
 
-  _donateClothes() {}
-
-  _donateOther() {}
+  @override
+  void initState() {
+    super.initState();
+    urls = donateUrlsJsonList
+        .map((countryData) => SimpleListItem.fromJson(countryData))
+        .toList();
+    urlsAll = List.of(urls);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(16, 85, 16, 24),
-          child: Column(children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    SimpleRowButton(
-                        title: 'Humaniatrne organizacije',
-                        onPressedAction: () {
-                          _donateMoney();
-                        }),
-                    SimpleRowButton(
-                        title: 'Hrana',
-                        onPressedAction: () {
-                          _donateFood();
-                        }),
-                    SimpleRowButton(
-                        title: 'Garderoba',
-                        onPressedAction: () {
-                          _donateClothes();
-                        }),
-                    SimpleRowButton(
-                        title: 'Drugo',
-                        onPressedAction: () {
-                          _donateOther();
-                        }),
-                  ],
-                ),
-              ),
-            ),
-          ]),
-        ),
-      ),
-    );
+        body: SafeArea(
+            child: Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: SingleChildScrollView(
+          child: Column(
+              children: new List.generate(
+                  urls.length,
+                  (i) => SimpleRowButton(
+                      title: urls[i].name,
+                      onPressedAction: () {
+                        simpleItemAction(urls[i]);
+                      })))),
+    )));
   }
 }

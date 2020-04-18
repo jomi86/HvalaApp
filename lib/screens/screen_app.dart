@@ -1,7 +1,9 @@
+import 'package:Hvala/screens/page_call.dart';
+import 'package:Hvala/screens/page_donate.dart';
+import 'package:Hvala/screens/page_help.dart';
+import 'package:Hvala/theme/HColors.dart';
+import 'package:Hvala/theme/HTextStyles.dart';
 import 'package:flutter/material.dart';
-import 'package:hvala/screens/page_call.dart';
-import 'package:hvala/screens/page_donate.dart';
-import 'package:hvala/screens/page_help.dart';
 
 import 'page_learn.dart';
 
@@ -134,25 +136,17 @@ class TabBarButton extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Icon(
-              iconData,
-              size: 25,
-              color: selectedIndex() == index
-                  ? Color(0xFFF41419)
-                  : Color(0xFF868EA5),
-            ),
+            Icon(iconData,
+                size: 25,
+                color: selectedIndex() == index
+                    ? HColors.primaryColor()
+                    : HColors.lightPrimaryColor()),
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 5, 0, 0),
-              child: Text(
-                text,
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  color: selectedIndex() == index
-                      ? Color(0xFFF41419)
-                      : Color(0xFF868EA5),
-                  fontSize: 12,
-                ),
-              ),
+              child: Text(text,
+                  style: selectedIndex() == index
+                      ? HTextStyle.tabBarSelected(context)
+                      : HTextStyle.tabBarRegular(context)),
             ),
           ],
         ),

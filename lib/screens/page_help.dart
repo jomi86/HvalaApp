@@ -1,82 +1,47 @@
+import 'package:Hvala/custom_widgets/row_button_simple.dart';
+import 'package:Hvala/models/model_simple_list_item.dart';
+import 'package:Hvala/url_resources/help_page_urls.dart';
+import 'package:Hvala/utils/open_browser.dart';
 import 'package:flutter/material.dart';
-import 'package:hvala/constants/app_content_constants.dart';
-import 'package:hvala/custom_widgets/row_button_simple.dart';
-import 'package:hvala/utils/open_browser.dart';
 
-class PageHelp extends StatelessWidget {
-  _volunteerAction() {
-    launchInBrowser(VOLUNTEER_INFO_PAGE);
+class PageHelp extends StatefulWidget {
+  @override
+  _PageHelpState createState() => _PageHelpState();
+}
+
+class _PageHelpState extends State<PageHelp> {
+  final List<Map> helpUrlsJsonList = help_page_urls;
+  List<SimpleListItem> urls;
+  List<SimpleListItem> urlsAll;
+
+  void _onPressedAction(SimpleListItem item) {
+    launchInBrowser(item.url);
   }
 
-  _giveBloodAction() {
-    launchInBrowser(GIVE_BLOOD_INFO_PAGE);
-  }
-
-  _helpOlderPeople() {
-    launchInBrowser(OLDER_PEOPLE_INFO_PAGE);
-  }
-
-  _helpVisuallyImpairedPersons() {
-    launchInBrowser(VISUALLY_IMPAIRED_INFO_PAGE);
-  }
-
-  _helpDeafPeople() {
-    launchInBrowser(DEAF_PEOPLE_INFO_PAGE);
-  }
-
-  _redCrossAction() {
-    launchInBrowser(RED_CROSS_INFO_PAGE);
+  @override
+  void initState() {
+    super.initState();
+    urls = helpUrlsJsonList
+        .map((countryData) => SimpleListItem.fromJson(countryData))
+        .toList();
+    urlsAll = List.of(urls);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(16, 85, 16, 24),
-          child: Column(children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    SimpleRowButton(
-                        title: 'Volontiraj',
-                        onPressedAction: () {
-                          _volunteerAction();
-                        }),
-                    SimpleRowButton(
-                        title: 'Daj krv',
-                        onPressedAction: () {
-                          _giveBloodAction();
-                        }),
-                    SimpleRowButton(
-                        title: 'Pomozi starijim licima',
-                        onPressedAction: () {
-                          _helpOlderPeople();
-                        }),
-                    SimpleRowButton(
-                        title: 'Pomozi slabovidim osobama',
-                        onPressedAction: () {
-                          _helpVisuallyImpairedPersons();
-                        }),
-                    SimpleRowButton(
-                        title: 'Pomozi nagluvim osobama',
-                        onPressedAction: () {
-                          _helpDeafPeople();
-                        }),
-                    SimpleRowButton(
-                        title: 'Crveni Krst',
-                        onPressedAction: () {
-                          _redCrossAction();
-                        }),
-                  ],
-                ),
-              ),
-            ),
-          ]),
-        ),
-      ),
-    );
+        body: SafeArea(
+            child: Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: SingleChildScrollView(
+          child: Column(
+              children: new List.generate(
+                  urls.length,
+                  (i) => SimpleRowButton(
+                      title: urls[i].name,
+                      onPressedAction: () {
+                        _onPressedAction(urls[i]);
+                      })))),
+    )));
   }
 }

@@ -1,47 +1,43 @@
+import 'package:Hvala/custom_widgets/row_button_simple.dart';
+import 'package:Hvala/models/model_simple_list_item.dart';
+import 'package:Hvala/url_resources/need_page_urls.dart';
+import 'package:Hvala/utils/item_actions.dart';
 import 'package:flutter/material.dart';
-import 'package:hvala/custom_widgets/row_button_simple.dart';
 
-class PageNeed extends StatelessWidget {
-  _needFood() {}
+class PageNeed extends StatefulWidget {
+  @override
+  _PageNeedState createState() => _PageNeedState();
+}
 
-  _needClothes() {}
+class _PageNeedState extends State<PageNeed> {
+  final List<Map> needUrlsJsonList = need_page_urls;
+  List<SimpleListItem> urls;
+  List<SimpleListItem> urlsAll;
 
-  _needOther() {}
+  @override
+  void initState() {
+    super.initState();
+    urls = needUrlsJsonList
+        .map((countryData) => SimpleListItem.fromJson(countryData))
+        .toList();
+    urlsAll = List.of(urls);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(16, 85, 16, 24),
-          child: Column(children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    SimpleRowButton(
-                        title: 'Hrana',
-                        onPressedAction: () {
-                          _needFood();
-                        }),
-                    SimpleRowButton(
-                        title: 'Garderoba',
-                        onPressedAction: () {
-                          _needClothes();
-                        }),
-                    SimpleRowButton(
-                        title: 'Drugo',
-                        onPressedAction: () {
-                          _needOther();
-                        }),
-                  ],
-                ),
-              ),
-            ),
-          ]),
-        ),
-      ),
-    );
+        body: SafeArea(
+            child: Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: SingleChildScrollView(
+          child: Column(
+              children: new List.generate(
+                  urls.length,
+                  (i) => SimpleRowButton(
+                      title: urls[i].name,
+                      onPressedAction: () {
+                        simpleItemAction(urls[i]);
+                      })))),
+    )));
   }
 }

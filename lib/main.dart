@@ -9,9 +9,9 @@
 // ![A scaffold with a bottom navigation bar containing three bottom navigation
 // bar items. The first one is selected.](https://flutter.github.io/assets-for-api-docs/assets/material/bottom_navigation_bar.png)
 
+import 'package:Hvala/theme/HTheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hvala/theme/HTheme.dart';
 
 import 'constants/screen_routes.dart';
 import 'screens/page_call.dart';
@@ -21,20 +21,19 @@ import 'screens/page_learn.dart';
 import 'screens/page_need.dart';
 import 'screens/screen_app.dart';
 
-void main() => runApp(MyApp(SCREEN_APP));
+void main() => runApp(MyApp());
 
-/// This Widget is the main application widget.
 class MyApp extends StatelessWidget {
-  MyApp(this.initialRoute);
-
-  final String initialRoute;
+  MyApp();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: HTheme.getDefaultTheme(context),
-        initialRoute: initialRoute,
-        // ignore: missing_return
+        darkTheme: HTheme.getDefaultTheme(context),
+        themeMode: ThemeMode.light,
+        debugShowCheckedModeBanner: false,
+        initialRoute: SCREEN_APP,
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case SCREEN_APP:
@@ -73,9 +72,8 @@ class MyApp extends StatelessWidget {
                 fullscreenDialog: true,
                 settings: settings,
               );
-
-              return null;
           }
+          return null;
         });
   }
 }
