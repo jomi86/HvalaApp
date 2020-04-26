@@ -9,6 +9,8 @@
 // ![A scaffold with a bottom navigation bar containing three bottom navigation
 // bar items. The first one is selected.](https://flutter.github.io/assets-for-api-docs/assets/material/bottom_navigation_bar.png)
 
+import 'package:Hvala/screens/HListPage.dart';
+import 'package:Hvala/screens/page_donate_food.dart';
 import 'package:Hvala/theme/HTheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -37,38 +39,50 @@ class MyApp extends StatelessWidget {
         onGenerateRoute: (settings) {
           switch (settings.name) {
             case SCREEN_APP:
-              return CupertinoPageRoute(
+              return MaterialPageRoute(
                 builder: (context) => ScreenApp(),
                 fullscreenDialog: true,
                 settings: settings,
               );
             case SCREEN_DONATE:
-              return CupertinoPageRoute(
+              return MaterialPageRoute(
                 builder: (context) => PageDonate(),
                 fullscreenDialog: true,
                 settings: settings,
               );
             case SCREEN_HELP:
-              return CupertinoPageRoute(
+              return MaterialPageRoute(
                 builder: (context) => PageHelp(),
                 fullscreenDialog: true,
                 settings: settings,
               );
             case SCREEN_NEED:
-              return CupertinoPageRoute(
+              return MaterialPageRoute(
                 builder: (context) => PageNeed(),
                 fullscreenDialog: true,
                 settings: settings,
               );
             case SCREEN_LEARN:
-              return CupertinoPageRoute(
+              return MaterialPageRoute(
                 builder: (context) => PageLearn(),
                 fullscreenDialog: true,
                 settings: settings,
               );
             case SCREEN_CALL:
-              return CupertinoPageRoute(
+              return MaterialPageRoute(
                 builder: (context) => PageCall(),
+                fullscreenDialog: true,
+                settings: settings,
+              );
+            case SCREEN_DONATE_FOOD:
+              return MaterialPageRoute(
+                builder: (context) => PageDonateFood(),
+                fullscreenDialog: true,
+                settings: settings,
+              );
+            case SCREEN_GENERIC_LIST:
+              return MaterialPageRoute(
+                builder: (context) => HListPage(),
                 fullscreenDialog: true,
                 settings: settings,
               );

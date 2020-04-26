@@ -1,9 +1,26 @@
-import 'package:Hvala/constants/app_content_constants.dart';
-
 const List<Map<String, String>> learn_page_urls = [
-  {"Name": "O Covid-19", "url": COVID19_INFO_PHONE, "type": "url"},
-  {"Name": "Prva pomoć", "url": LEARN_FIRST_AID_PAGE, "type": "url"},
-  {"Name": "Jezik rukama", "url": LEARN_HAND_LANGUAGE_PAGE, "type": "url"},
+  {"Name": "O Covid-19", "url": "tel:19920", "type": "url"},
+  {
+    "Name": "Prva pomoć",
+    "url":
+        "https://www.redcross.org.rs/sr/javna-ovla%C5%A1%C4%87enja-i-programi-cks/prva-pomo%C4%87/",
+    "type": "url"
+  },
+  {
+    "Name": "Jezik rukama",
+    "url": "http://gogb.org.rs/srpski-znakovni-jezik/",
+    "type": "url"
+  },
+  {
+    "Name": "Klimatske promene",
+    "url": "https://www.klima101.rs/",
+    "type": "url"
+  },
+  {
+    "Name": "Briga o prirodi - organizacija ORCA",
+    "url": "https://orca.rs/",
+    "type": "url"
+  },
 //  {
 //    "Name": "Pomozi starijim licima",
 //    "url": OLDER_PEOPLE_INFO_PAGE,

@@ -33,6 +33,8 @@ const String LEARN_FIRST_AID_PAGE =
     'https://www.redcross.org.rs/sr/javna-ovla%C5%A1%C4%87enja-i-programi-cks/prva-pomo%C4%87/';
 const String LEARN_HAND_LANGUAGE_PAGE =
     'http://gogb.org.rs/srpski-znakovni-jezik/';
+const String LEARN_CLIMATE_PAGE = "https://www.klima101.rs/";
+const String LEARN_ORCA_PAGE = "https://orca.rs/";
 
 ///
 /// POMOZI:
