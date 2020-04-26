@@ -27,6 +27,7 @@ class _PageNeedState extends State<PageNeed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(),
         backgroundColor: HColors.backgroundColor(),
         body: SafeArea(
             child: Padding(

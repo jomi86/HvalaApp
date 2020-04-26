@@ -56,3 +56,6 @@ const String PRIHVATILISTE_ZA_ODRASLE_PAGE =
 const String PRIHVATILISTE_ZA_DECU_BEOGRADA_PAGE =
     "https://www.prihvatiliste.rs/index.html";
 const String SVRATISTE_PAGE = "http://cim.org.rs/sr/";
+
+const String ANTIKORONA_ZONA = "https://antikoronazona.rs/";
+const String HAPPY_BROADCAST = "https://www.thehappybroadcast.com/";

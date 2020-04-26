@@ -31,6 +31,7 @@ class _PageHelpState extends State<PageHelp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(),
         backgroundColor: HColors.backgroundColor(),
         body: SafeArea(
             child: Padding(

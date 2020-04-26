@@ -28,6 +28,7 @@ class _PageLearnState extends State<PageLearn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(),
         backgroundColor: HColors.backgroundColor(),
         body: SafeArea(
             child: Padding(

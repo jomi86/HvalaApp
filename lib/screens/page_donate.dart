@@ -17,6 +17,7 @@ class _PageDonateState extends State<PageDonate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(),
         backgroundColor: HColors.backgroundColor(),
         body: SafeArea(
             child: Padding(

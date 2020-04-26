@@ -27,6 +27,7 @@ class _PageCallState extends State<PageCall> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(),
         backgroundColor: HColors.backgroundColor(),
         body: SafeArea(
             child: Padding(

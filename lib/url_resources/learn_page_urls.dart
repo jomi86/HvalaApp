@@ -1,5 +1,4 @@
 const List<Map<String, String>> learn_page_urls = [
-  {"Name": "O Covid-19", "url": "tel:19920", "type": "url"},
   {
     "Name": "Prva pomoć",
     "url":
