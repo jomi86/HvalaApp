@@ -33,12 +33,15 @@ const List<Map<String, String>> help_page_urls = [
   },
   {"name": "Crveni Krst", "url": "https://www.redcross.org.rs/", "type": "url"},
   {
-    "name": "Aplikacija 'SevApp' - daruj i pronadji",
+    "name": "Aplikacija 'SevApp'",
+    "description": "Daruj ili potraži predmete ili usluge za sebe.",
     "url": "https://sevapp.rs/",
     "type": "url"
   },
   {
-    "name": "Aplikacija 'BeMyEyes' - pomozi slabovidim osobama",
+    "name": "Aplikacija 'BeMyEyes'",
+    "description":
+        "Aplikaciji koja povezuje slijepe osobe s volonterima koji nemaju problema s vidom.",
     "url": "https://www.bemyeyes.com/",
     "type": "url"
   },

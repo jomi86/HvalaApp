@@ -33,37 +33,43 @@ class _ScreenAppState extends State<ScreenApp> {
         onPressed: () => Navigator.pushNamed(context, SCREEN_CALL),
       ),
       body: SafeArea(
-          child: Column(
-        children: <Widget>[
-          SimpleRowButton(
-              title: 'Covid-19',
-              onPressedAction: () {
-                openPageWithResources(
-                    context, SCREEN_GENERIC_LIST, covid_page_urls);
-              }),
-          SimpleRowButton(
-            title: 'Doniraj'.toUpperCase(),
-            onPressedAction: () => Navigator.pushNamed(context, SCREEN_DONATE),
-          ),
-          SimpleRowButton(
-            title: 'Pomozi'.toUpperCase(),
-            onPressedAction: () => Navigator.pushNamed(context, SCREEN_HELP),
-          ),
-          SimpleRowButton(
-            title: 'Nauči'.toUpperCase(),
-            onPressedAction: () => Navigator.pushNamed(context, SCREEN_LEARN),
-          ),
-          SimpleRowButton(
-            title: 'Pomozi malim proizvodzačima'.toUpperCase(),
-            onPressedAction: () => openPageWithResources(
-                context, SCREEN_GENERIC_LIST, serbia_food_page_urls),
-          ),
-          SimpleRowButton(
-            title: 'Saznaj nešto lepo danas :)'.toUpperCase(),
-            onPressedAction: () => openPageWithResources(
-                context, SCREEN_GENERIC_LIST, happy_page_urls),
-          )
-        ],
+          child: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            SimpleRowButton(
+                title: 'Covid-19',
+                onPressedAction: () {
+                  openPageWithResources(
+                      context, SCREEN_GENERIC_LIST, covid_page_urls);
+                }),
+            SimpleRowButton(
+              title: 'Doniraj'.toUpperCase(),
+              onPressedAction: () =>
+                  Navigator.pushNamed(context, SCREEN_DONATE),
+            ),
+            SimpleRowButton(
+              title: 'Pomozi'.toUpperCase(),
+              onPressedAction: () => Navigator.pushNamed(context, SCREEN_HELP),
+            ),
+            SimpleRowButton(
+              title: 'Nauči'.toUpperCase(),
+              onPressedAction: () => Navigator.pushNamed(context, SCREEN_LEARN),
+            ),
+            SimpleRowButton(
+              title: 'Pomozi malim proizvodzačima'.toUpperCase(),
+              onPressedAction: () => openPageWithResources(
+                  context, SCREEN_GENERIC_LIST, serbia_food_page_urls),
+            ),
+            SimpleRowButton(
+              title: 'Saznaj nešto lepo danas :)'.toUpperCase(),
+              onPressedAction: () => openPageWithResources(
+                  context, SCREEN_GENERIC_LIST, happy_page_urls),
+            ),
+            SizedBox(
+              height: 60,
+            )
+          ],
+        ),
       )),
     );
   }
