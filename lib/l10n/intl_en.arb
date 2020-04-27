@@ -1,1 +1,7 @@
-{}
+{
+  "emergencyPhone": "Emergency",
+  "policePhone": "Police",
+  "firefightersPhone": "Firefighters",
+  "helpOnTheRoadPhone": "Help on the road",
+  "covid19InfoLinePhone": "Covid19 info line"
+}
