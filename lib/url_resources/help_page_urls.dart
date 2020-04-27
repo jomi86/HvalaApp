@@ -27,44 +27,19 @@ const List<Map<String, String>> help_page_urls = [
     "type": "url"
   },
   {
-    "Name": "Aplikacija 'SevApp' - daruj i pronadji",
-    "url": "https://sevapp.rs/",
-    "type": "url"
-  },
-  {
     "Name": "Daj krv",
     "url": "http://www.nbti.org.rs/cms/view.php?id=115",
     "type": "url"
   },
   {"Name": "Crveni Krst", "url": "https://www.redcross.org.rs/", "type": "url"},
   {
-    "Name": "Dostava voća i hrane - 'Gajbica'",
-    "url": "http://www.gajbica.rs/",
+    "Name": "Aplikacija 'SevApp' - daruj i pronadji",
+    "url": "https://sevapp.rs/",
     "type": "url"
   },
   {
-    "Name": "Kupi namirnice od malih proizvodjača",
-    "url": "https://rucakza200dinara.com/mali-proizvodaci-hrane-u-srbiji/",
-    "type": "url"
-  },
-  {
-    "Name": "Online pijaca",
-    "url": "https://ponovoradipijaca.com/",
-    "type": "url"
-  },
-  {
-    "Name": "Prihvatilište za odrasle",
-    "url": "https://www.facebook.com/Prihvatiliste.za.odrasle/",
-    "type": "url"
-  },
-  {
-    "Name": "Centar za integraciju mladih - Svratište",
-    "url": "http://cim.org.rs/sr/",
-    "type": "url"
-  },
-  {
-    "Name": "Prihvatilište za decu Beograda",
-    "url": "https://www.prihvatiliste.rs/index.html",
+    "Name": "Aplikacija 'BeMyEyes' - pomozi slabovidim osobama",
+    "url": "https://www.bemyeyes.com/",
     "type": "url"
   },
 ];

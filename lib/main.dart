@@ -11,7 +11,7 @@
 
 import 'package:Hvala/screens/HListPage.dart';
 import 'package:Hvala/screens/page_donate_food.dart';
-import 'package:Hvala/screens/page_happy_broadcast.dart';
+import 'package:Hvala/screens/page_happy.dart';
 import 'package:Hvala/theme/HTheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -87,9 +87,9 @@ class MyApp extends StatelessWidget {
                 fullscreenDialog: true,
                 settings: settings,
               );
-            case SCREEN_HAPPY_BROADCAST:
+            case SCREEN_HAPPY:
               return MaterialPageRoute(
-                builder: (context) => HappyBroadcastPage(),
+                builder: (context) => HappyPage(),
                 fullscreenDialog: true,
                 settings: settings,
               );

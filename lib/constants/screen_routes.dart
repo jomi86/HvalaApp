@@ -6,4 +6,4 @@ const String SCREEN_NEED = '/need';
 const String SCREEN_LEARN = '/learn';
 const String SCREEN_CALL = '/call';
 const String SCREEN_GENERIC_LIST = '/generic_list';
-const String SCREEN_HAPPY_BROADCAST = '/happy';
+const String SCREEN_HAPPY = '/happy';

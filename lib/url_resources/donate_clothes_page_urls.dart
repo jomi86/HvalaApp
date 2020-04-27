@@ -9,4 +9,9 @@ const List<Map<String, String>> donate_clothes_page_urls = [
     "url": "https://www.facebook.com/Prihvatiliste.za.odrasle/",
     "type": "url"
   },
+  {
+    "Name": "Prihvatilište za decu Beograda",
+    "url": "https://www.prihvatiliste.rs/index.html",
+    "type": "url"
+  },
 ];

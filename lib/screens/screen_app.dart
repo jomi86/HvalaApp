@@ -1,10 +1,9 @@
-import 'package:Hvala/constants/app_content_constants.dart';
 import 'package:Hvala/constants/screen_routes.dart';
 import 'package:Hvala/custom_widgets/row_button_simple.dart';
 import 'package:Hvala/theme/HTextStyles.dart';
 import 'package:Hvala/url_resources/covid_page_urls.dart';
+import 'package:Hvala/url_resources/mali_proizvodjaci_urls.dart';
 import 'package:Hvala/utils/item_actions.dart';
-import 'package:Hvala/utils/open_browser.dart';
 import 'package:flutter/material.dart';
 
 class ScreenApp extends StatefulWidget {
@@ -52,8 +51,13 @@ class _ScreenAppState extends State<ScreenApp> {
             onPressedAction: () => Navigator.pushNamed(context, SCREEN_LEARN),
           ),
           SimpleRowButton(
-            title: 'Srećne vesti - Happy broadcast'.toUpperCase(),
-            onPressedAction: () => launchInBrowser(HAPPY_BROADCAST),
+            title: 'Pomozi malim proizvodzačima'.toUpperCase(),
+            onPressedAction: () => openPageWithResources(
+                context, SCREEN_GENERIC_LIST, serbia_food_page_urls),
+          ),
+          SimpleRowButton(
+            title: 'Saznaj nešto lepo danas :)'.toUpperCase(),
+            onPressedAction: () => Navigator.pushNamed(context, SCREEN_HAPPY),
           )
         ],
       )),

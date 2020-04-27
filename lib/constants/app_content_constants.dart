@@ -58,4 +58,6 @@ const String PRIHVATILISTE_ZA_DECU_BEOGRADA_PAGE =
 const String SVRATISTE_PAGE = "http://cim.org.rs/sr/";
 
 const String ANTIKORONA_ZONA = "https://antikoronazona.rs/";
-const String HAPPY_BROADCAST = "https://www.thehappybroadcast.com/";
+const String HAPPY_BROADCAST_URL = "https://www.thehappybroadcast.com/";
+const String GOOD_NEWS_NETWORK_URL = "https://www.goodnewsnetwork.org/";
+const String PRICE_SA_DUSOM_URl = "https://pricesadusom.com/";

@@ -43,12 +43,6 @@ class _PageDonateState extends State<PageDonate> {
                           openPageWithResources(context, SCREEN_GENERIC_LIST,
                               donate_clothes_page_urls);
                         }),
-                    SimpleRowButton(
-                        title: 'Drugo',
-                        onPressedAction: () {
-                          openPageWithResources(context, SCREEN_DONATE_FOOD,
-                              donate_food_page_urls);
-                        }),
                   ],
                 )))));
   }
