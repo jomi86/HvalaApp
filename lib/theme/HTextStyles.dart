@@ -5,7 +5,13 @@ import 'HColors.dart';
 class HTextStyle {
   static TextStyle buttonRegular(BuildContext context) =>
       defaultTestStyle(context).copyWith(
-        fontSize: 20.0,
+        fontSize: 18.0,
+        color: HColors.white(),
+      );
+
+  static TextStyle buttonSmall(BuildContext context) =>
+      defaultTestStyle(context).copyWith(
+        fontSize: 14.0,
         color: HColors.white(),
       );
 

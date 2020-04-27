@@ -1,9 +1,10 @@
 class SimpleListItem {
   String name;
+  String description;
   String url;
   SimpleListItemType type;
 
-  SimpleListItem(this.name, this.url, this.type);
+  SimpleListItem(this.name, this.description, this.url, this.type);
 
   @override
   String toString() {
@@ -11,7 +12,8 @@ class SimpleListItem {
   }
 
   SimpleListItem.fromJson(Map<dynamic, dynamic> data) {
-    name = data['Name'];
+    name = data['name'];
+    description = data['description'];
     url = data['url'];
     String urlType = data['type'];
     if (urlType == "page") {
@@ -22,4 +24,4 @@ class SimpleListItem {
   }
 }
 
-enum SimpleListItemType { url, page }
+enum SimpleListItemType { url, page, external }

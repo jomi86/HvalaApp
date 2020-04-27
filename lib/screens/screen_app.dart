@@ -1,7 +1,9 @@
 import 'package:Hvala/constants/screen_routes.dart';
 import 'package:Hvala/custom_widgets/row_button_simple.dart';
+import 'package:Hvala/theme/HColors.dart';
 import 'package:Hvala/theme/HTextStyles.dart';
 import 'package:Hvala/url_resources/covid_page_urls.dart';
+import 'package:Hvala/url_resources/happy_page_urls.dart';
 import 'package:Hvala/url_resources/mali_proizvodjaci_urls.dart';
 import 'package:Hvala/utils/item_actions.dart';
 import 'package:flutter/material.dart';
@@ -16,17 +18,18 @@ class _ScreenAppState extends State<ScreenApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () => Navigator.pushNamed(context, SCREEN_CALL),
-          )
-        ],
+//        actions: <Widget>[
+//          IconButton(
+//            icon: Icon(Icons.settings),
+//            onPressed: () => Navigator.pushNamed(context, SCREEN_CALL),
+//          )
+//        ],
         title: Text("Hvala", style: HTextStyle.appTitle(context)),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.call),
         elevation: 2.0,
+        backgroundColor: HColors.actionButtonColor(),
         onPressed: () => Navigator.pushNamed(context, SCREEN_CALL),
       ),
       body: SafeArea(
@@ -57,7 +60,8 @@ class _ScreenAppState extends State<ScreenApp> {
           ),
           SimpleRowButton(
             title: 'Saznaj nešto lepo danas :)'.toUpperCase(),
-            onPressedAction: () => Navigator.pushNamed(context, SCREEN_HAPPY),
+            onPressedAction: () => openPageWithResources(
+                context, SCREEN_GENERIC_LIST, happy_page_urls),
           )
         ],
       )),
