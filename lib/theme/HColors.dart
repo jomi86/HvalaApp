@@ -45,12 +45,3 @@ const _textPrimary = const Color(0xFF212121);
 const _textSecondary = const Color(0xFF757575);
 const _accent = const Color(0xFFFF9800);
 const _divider = const Color(0xFFBDBDBD);
-
-//.dark-primary-color    { background: #; }
-//.default-primary-color { background: #4CAF50; }
-//.light-primary-color   { background: #; }
-//.text-primary-color    { color: #FFFFFF; }
-//.accent-color          { background: #; }
-//.primary-text-color    { color: #212121; }
-//.secondary-text-color  { color: #757575; }
-//.divider-color         { border-color: #BDBDBD; }
