@@ -16,23 +16,13 @@ const List<Map<String, String>> learn_page_urls = [
     "type": "url"
   },
   {
+    "name": "Svetski fond za zaštitu prirode - WWF",
+    "url": "https://www.wwfadria.org/sr/novosti/vesti/",
+    "type": "url"
+  },
+  {
     "name": "Briga o prirodi - organizacija ORCA",
     "url": "https://orca.rs/",
     "type": "url"
   },
-//  {
-//    "name": "Pomozi starijim licima",
-//    "url": OLDER_PEOPLE_INFO_PAGE,
-//    "type": "url"
-//  },
-//  {
-//    "name": "Pomozi slabovidim osobama",
-//    "url": VISUALLY_IMPAIRED_INFO_PAGE,
-//    "type": "url"
-//  },
-//  {
-//    "name": "Pomozi nagluvim osobama",
-//    "url": DEAF_PEOPLE_INFO_PAGE,
-//    "type": "url"
-//  },
 ];
