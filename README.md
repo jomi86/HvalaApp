@@ -2,15 +2,20 @@
 
 Aplikacija za lakšu pomoć u nevolji
 
-## Getting Started
+## Opis
 
-This project is a starting point for a Flutter application.
+Ova aplikacija je nastala kao pomoć autoru za sumiranja korisnih linkova i telefonskih brojeva na jednom mestu.
 
-A few resources to get you started if this is your first Flutter project:
+Ukoliko hoćete da na jednom mestu imate mogućnost da pozovete hitnu pomoć (ukoliko ne znate broj napamet), prijavite se da budete volonter, nadjete lokaciju prihvatilišta da donirate garderobu ili poručite hranu od nekog od malih proizvodjača možda vam ova aplikacija može pomoći.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Trenutno su u aplikaciju ubačeni samo linkovi za Beograd i Srbiju, ukoliko bude potrebe dodavaće se još sadržaja i za druge gradove.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ukoliko imate predlog ili sugestiju slobodno mi pišite.
+
+Sadržaj koji se nalazi u okviru ove aplikacije nije sponzorisan niti plaćen i svi podaci su javno dostupni...
+
+## Kontakt
+
+Imate predlog ili sugestiju?
+
+Pošaljite mi vaše mišljenje na [jomi86@gmail.com]
