@@ -1,6 +1,6 @@
 # Hvala
 
-Aplikacija za lakšu pomoć u nevolji
+Aplikacija koja olakšava činjenjenje dobrog dela
 
 ## Opis
 
