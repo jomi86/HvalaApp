@@ -14,6 +14,12 @@ Ukoliko imate predlog ili sugestiju slobodno mi pišite.
 
 Sadržaj koji se nalazi u okviru ove aplikacije nije sponzorisan niti plaćen i svi podaci su javno dostupni...
 
+## Politika privatnosti
+Pogledajte našu [politiku privatnosti](PRIVACY.md)
+
+## Licenca
+Pogledajte našu [licencu](LICENSE.md)
+
 ## Kontakt
 
 Imate predlog ili sugestiju?
