@@ -1,9 +1,13 @@
 import 'package:Hvala/constants/screen_routes.dart';
 import 'package:Hvala/custom_widgets/row_button_simple.dart';
+import 'package:Hvala/models/model_page_arguments.dart';
 import 'package:Hvala/theme/HColors.dart';
 import 'package:Hvala/theme/HTextStyles.dart';
-import 'package:Hvala/url_resources/covid_page_urls.dart';
+import 'package:Hvala/url_resources/call_page_urls.dart';
+import 'package:Hvala/url_resources/ekologija_page_urls.dart';
 import 'package:Hvala/url_resources/happy_page_urls.dart';
+import 'package:Hvala/url_resources/help_page_urls.dart';
+import 'package:Hvala/url_resources/learn_page_urls.dart';
 import 'package:Hvala/url_resources/mali_proizvodjaci_urls.dart';
 import 'package:Hvala/utils/item_actions.dart';
 import 'package:flutter/material.dart';
@@ -18,16 +22,10 @@ class _ScreenAppState extends State<ScreenApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-//        actions: <Widget>[
-//          IconButton(
-//            icon: Icon(Icons.settings),
-//            onPressed: () => Navigator.pushNamed(context, SCREEN_CALL),
-//          )
-//        ],
         title: Text("Hvala", style: HTextStyle.appTitle(context)),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.call),
+        child: Icon(Icons.favorite_border),
         elevation: 2.0,
         backgroundColor: HColors.actionButtonColor(),
         onPressed: () => Navigator.pushNamed(context, SCREEN_CALL),
@@ -37,33 +35,47 @@ class _ScreenAppState extends State<ScreenApp> {
         child: Column(
           children: <Widget>[
             SimpleRowButton(
-                title: 'Covid-19',
-                onPressedAction: () {
-                  openPageWithResources(
-                      context, SCREEN_GENERIC_LIST, covid_page_urls);
-                }),
-            SimpleRowButton(
               title: 'Doniraj'.toUpperCase(),
               onPressedAction: () =>
                   Navigator.pushNamed(context, SCREEN_DONATE),
             ),
             SimpleRowButton(
               title: 'Pomozi'.toUpperCase(),
-              onPressedAction: () => Navigator.pushNamed(context, SCREEN_HELP),
+              onPressedAction: () => openPageWithResources(context,
+                  SCREEN_GENERIC_LIST, PageArguments("Pomozi", help_page_urls)),
             ),
             SimpleRowButton(
               title: 'Nauči'.toUpperCase(),
-              onPressedAction: () => Navigator.pushNamed(context, SCREEN_LEARN),
+              onPressedAction: () => openPageWithResources(context,
+                  SCREEN_GENERIC_LIST, PageArguments("Nauči", learn_page_urls)),
             ),
             SimpleRowButton(
               title: 'Pomozi malim proizvodzačima'.toUpperCase(),
               onPressedAction: () => openPageWithResources(
-                  context, SCREEN_GENERIC_LIST, serbia_food_page_urls),
+                  context,
+                  SCREEN_GENERIC_LIST,
+                  PageArguments("Mali proizvodjači", serbia_food_page_urls)),
+            ),
+            SimpleRowButton(
+              title: 'Važni brojevi'.toUpperCase(),
+              onPressedAction: () => openPageWithResources(
+                  context,
+                  SCREEN_GENERIC_LIST,
+                  PageArguments("Važni brojevi", call_page_urls)),
+            ),
+            SimpleRowButton(
+              title: 'Ekologija'.toUpperCase(),
+              onPressedAction: () => openPageWithResources(
+                  context,
+                  SCREEN_GENERIC_LIST,
+                  PageArguments("Ekologija", eco_page_urls)),
             ),
             SimpleRowButton(
               title: 'Saznaj nešto lepo danas :)'.toUpperCase(),
               onPressedAction: () => openPageWithResources(
-                  context, SCREEN_GENERIC_LIST, happy_page_urls),
+                  context,
+                  SCREEN_GENERIC_LIST,
+                  PageArguments("Lepe vesti", happy_page_urls)),
             ),
             SizedBox(
               height: 60,

@@ -3,6 +3,7 @@ import 'package:Hvala/models/model_simple_list_item.dart';
 import 'package:Hvala/theme/HColors.dart';
 import 'package:Hvala/url_resources/learn_page_urls.dart';
 import 'package:Hvala/utils/item_actions.dart';
+import 'package:Hvala/utils/open_browser.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +24,10 @@ class _PageLearnState extends State<PageLearn> {
         .map((countryData) => SimpleListItem.fromJson(countryData))
         .toList();
     urlsAll = List.of(urls);
+  }
+
+  void _onPressedAction(SimpleListItem item) {
+    launchInBrowser(item.url);
   }
 
   @override

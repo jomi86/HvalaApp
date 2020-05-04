@@ -7,3 +7,4 @@ const String SCREEN_LEARN = '/learn';
 const String SCREEN_CALL = '/call';
 const String SCREEN_GENERIC_LIST = '/generic_list';
 const String SCREEN_HAPPY = '/happy';
+const String SCREEN_FAVORITES = '/favorites';

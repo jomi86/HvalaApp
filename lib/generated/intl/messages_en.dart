@@ -21,10 +21,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "covid19InfoLinePhone" : MessageLookupByLibrary.simpleMessage("Covid19 info line"),
-    "emergencyPhone" : MessageLookupByLibrary.simpleMessage("Emergency"),
-    "firefightersPhone" : MessageLookupByLibrary.simpleMessage("Firefighters"),
-    "helpOnTheRoadPhone" : MessageLookupByLibrary.simpleMessage("Help on the road"),
-    "policePhone" : MessageLookupByLibrary.simpleMessage("Police")
+
   };
 }

@@ -27,50 +27,7 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  String get emergencyPhone {
-    return Intl.message(
-      'Emergency',
-      name: 'emergencyPhone',
-      desc: '',
-      args: [],
-    );
-  }
 
-  String get policePhone {
-    return Intl.message(
-      'Police',
-      name: 'policePhone',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get firefightersPhone {
-    return Intl.message(
-      'Firefighters',
-      name: 'firefightersPhone',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get helpOnTheRoadPhone {
-    return Intl.message(
-      'Help on the road',
-      name: 'helpOnTheRoadPhone',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get covid19InfoLinePhone {
-    return Intl.message(
-      'Covid19 info line',
-      name: 'covid19InfoLinePhone',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -79,7 +36,6 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'sr', countryCode: 'RS'),
     ];
   }
 

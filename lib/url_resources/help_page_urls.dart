@@ -33,6 +33,13 @@ const List<Map<String, String>> help_page_urls = [
   },
   {"name": "Crveni Krst", "url": "https://www.redcross.org.rs/", "type": "url"},
   {
+    "name": "Čep za hendikep",
+    "description":
+        "Удружење „Чеп за хендикеп“ представља грађанску иницијативу која је настала као друштвена реакција на неповољну законску регулативу у Србији, која предвиђа замену ортопедских помагала у веома дугим, а понекад и нехуманим роковима (3-8 година у односу на врсту инвалидитета).",
+    "url": "https://cepzahendikep.org/",
+    "type": "url"
+  },
+  {
     "name": "Aplikacija 'SevApp'",
     "description": "Daruj ili potraži predmete ili usluge za sebe.",
     "url": "https://sevapp.rs/",

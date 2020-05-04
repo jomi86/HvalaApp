@@ -11,6 +11,7 @@
 
 import 'package:Hvala/screens/HListPage.dart';
 import 'package:Hvala/screens/page_donate_food.dart';
+import 'package:Hvala/screens/page_favorites.dart';
 import 'package:Hvala/screens/page_happy.dart';
 import 'package:Hvala/theme/HTheme.dart';
 import 'package:flutter/cupertino.dart';
@@ -42,55 +43,61 @@ class MyApp extends StatelessWidget {
             case SCREEN_APP:
               return MaterialPageRoute(
                 builder: (context) => ScreenApp(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
                 settings: settings,
               );
             case SCREEN_DONATE:
               return MaterialPageRoute(
                 builder: (context) => PageDonate(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
                 settings: settings,
               );
             case SCREEN_HELP:
-              return MaterialPageRoute(
+              return CupertinoPageRoute(
                 builder: (context) => PageHelp(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
                 settings: settings,
               );
             case SCREEN_NEED:
               return MaterialPageRoute(
                 builder: (context) => PageNeed(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
                 settings: settings,
               );
             case SCREEN_LEARN:
-              return MaterialPageRoute(
+              return CupertinoPageRoute(
                 builder: (context) => PageLearn(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
                 settings: settings,
               );
             case SCREEN_CALL:
-              return MaterialPageRoute(
+              return CupertinoPageRoute(
                 builder: (context) => PageCall(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
                 settings: settings,
               );
             case SCREEN_DONATE_FOOD:
-              return MaterialPageRoute(
+              return CupertinoPageRoute(
                 builder: (context) => PageDonateFood(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
                 settings: settings,
               );
             case SCREEN_GENERIC_LIST:
-              return MaterialPageRoute(
+              return CupertinoPageRoute(
                 builder: (context) => HListPage(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
                 settings: settings,
               );
             case SCREEN_HAPPY:
-              return MaterialPageRoute(
+              return CupertinoPageRoute(
                 builder: (context) => HappyPage(),
-                fullscreenDialog: true,
+                fullscreenDialog: false,
+                settings: settings,
+              );
+            case SCREEN_FAVORITES:
+              return CupertinoPageRoute(
+                builder: (context) => FavoritesPage(),
+                fullscreenDialog: false,
                 settings: settings,
               );
           }

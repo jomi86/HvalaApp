@@ -1,5 +1,6 @@
 import 'package:Hvala/constants/screen_routes.dart';
 import 'package:Hvala/custom_widgets/row_button_simple.dart';
+import 'package:Hvala/models/model_page_arguments.dart';
 import 'package:Hvala/theme/HColors.dart';
 import 'package:Hvala/url_resources/donate_clothes_page_urls.dart';
 import 'package:Hvala/url_resources/donate_food_urls.dart';
@@ -17,7 +18,9 @@ class _PageDonateState extends State<PageDonate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text("Doniraj"),
+        ),
         backgroundColor: HColors.backgroundColor(),
         body: SafeArea(
             child: Padding(
@@ -28,20 +31,29 @@ class _PageDonateState extends State<PageDonate> {
                     SimpleRowButton(
                         title: 'Doniraj hranu',
                         onPressedAction: () {
-                          openPageWithResources(context, SCREEN_GENERIC_LIST,
-                              donate_food_page_urls);
+                          openPageWithResources(
+                              context,
+                              SCREEN_GENERIC_LIST,
+                              PageArguments(
+                                  "Doniraj hranu", donate_food_page_urls));
                         }),
                     SimpleRowButton(
                         title: 'Doniraj novac',
                         onPressedAction: () {
-                          openPageWithResources(context, SCREEN_GENERIC_LIST,
-                              donate_money_page_urls);
+                          openPageWithResources(
+                              context,
+                              SCREEN_GENERIC_LIST,
+                              PageArguments(
+                                  "Doniraj novac", donate_money_page_urls));
                         }),
                     SimpleRowButton(
                         title: 'Doniraj garderobu',
                         onPressedAction: () {
-                          openPageWithResources(context, SCREEN_GENERIC_LIST,
-                              donate_clothes_page_urls);
+                          openPageWithResources(
+                              context,
+                              SCREEN_GENERIC_LIST,
+                              PageArguments("Doniraj garderobu",
+                                  donate_clothes_page_urls));
                         }),
                   ],
                 )))));

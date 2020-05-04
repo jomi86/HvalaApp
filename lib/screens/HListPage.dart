@@ -1,5 +1,6 @@
 import 'package:Hvala/custom_widgets/row_button_expanded.dart';
 import 'package:Hvala/custom_widgets/row_button_simple.dart';
+import 'package:Hvala/models/model_page_arguments.dart';
 import 'package:Hvala/models/model_simple_list_item.dart';
 import 'package:Hvala/theme/HColors.dart';
 import 'package:Hvala/utils/item_actions.dart';
@@ -7,7 +8,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HListPage extends StatefulWidget {
-//  final String resourceUrl = ModalRoute.of(context).settings.arguments;
   final List<Map<String, String>> resourceUrl;
 
   const HListPage({Key key, this.resourceUrl}) : super(key: key);
@@ -26,14 +26,20 @@ class _HListPageState extends State<HListPage> {
   @override
   void initState() {
     super.initState();
-    urls = resourceUrl.map((data) => SimpleListItem.fromJson(data)).toList();
-    urlsAll = List.of(urls);
+//    urls = resourceUrl.map((data) => SimpleListItem.fromJson(data)).toList();
+//    urlsAll = List.of(urls);
   }
 
   @override
   Widget build(BuildContext context) {
+    final PageArguments arguments = ModalRoute.of(context).settings.arguments;
+    final List<Map<String, String>> resourceUrl = arguments.resource;
+    urls = resourceUrl.map((data) => SimpleListItem.fromJson(data)).toList();
+    urlsAll = List.of(urls);
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text(arguments.name),
+        ),
         backgroundColor: HColors.backgroundColor(),
         body: SafeArea(
             child: Padding(

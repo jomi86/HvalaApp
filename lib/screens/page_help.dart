@@ -2,7 +2,7 @@ import 'package:Hvala/custom_widgets/row_button_simple.dart';
 import 'package:Hvala/models/model_simple_list_item.dart';
 import 'package:Hvala/theme/HColors.dart';
 import 'package:Hvala/url_resources/help_page_urls.dart';
-import 'package:Hvala/utils/open_browser.dart';
+import 'package:Hvala/utils/item_actions.dart';
 import 'package:flutter/material.dart';
 
 class PageHelp extends StatefulWidget {
@@ -14,10 +14,6 @@ class _PageHelpState extends State<PageHelp> {
   final List<Map> helpUrlsJsonList = help_page_urls;
   List<SimpleListItem> urls;
   List<SimpleListItem> urlsAll;
-
-  void _onPressedAction(SimpleListItem item) {
-    launchInBrowser(item.url);
-  }
 
   @override
   void initState() {
@@ -43,7 +39,7 @@ class _PageHelpState extends State<PageHelp> {
                       (i) => SimpleRowButton(
                           title: urls[i].name,
                           onPressedAction: () {
-                            _onPressedAction(urls[i]);
+                            simpleItemAction(urls[i]);
                           })))),
         )));
   }

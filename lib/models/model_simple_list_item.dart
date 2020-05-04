@@ -16,12 +16,12 @@ class SimpleListItem {
     description = data['description'];
     url = data['url'];
     String urlType = data['type'];
-    if (urlType == "page") {
-      type = SimpleListItemType.page;
+    if (urlType == "phone") {
+      type = SimpleListItemType.phone;
     } else {
       type = SimpleListItemType.url;
     }
   }
 }
 
-enum SimpleListItemType { url, page, external }
+enum SimpleListItemType { url, phone }

@@ -2,7 +2,8 @@ import 'package:Hvala/custom_widgets/row_button_simple.dart';
 import 'package:Hvala/models/model_simple_list_item.dart';
 import 'package:Hvala/theme/HColors.dart';
 import 'package:Hvala/url_resources/need_page_urls.dart';
-import 'package:Hvala/utils/item_actions.dart';
+import 'package:Hvala/utils/make_phone_call.dart';
+import 'package:Hvala/utils/open_browser.dart';
 import 'package:flutter/material.dart';
 
 class PageNeed extends StatefulWidget {
@@ -42,5 +43,13 @@ class _PageNeedState extends State<PageNeed> {
                             simpleItemAction(urls[i]);
                           })))),
         )));
+  }
+
+  void simpleItemAction(SimpleListItem item) {
+    if (item.type == SimpleListItemType.url) {
+      makePhoneCall(item.url);
+    } else {
+      launchInBrowser(item.url);
+    }
   }
 }
