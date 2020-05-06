@@ -28,7 +28,7 @@ class _ScreenAppState extends State<ScreenApp> {
         child: Icon(Icons.favorite_border),
         elevation: 2.0,
         backgroundColor: HColors.actionButtonColor(),
-        onPressed: () => Navigator.pushNamed(context, SCREEN_CALL),
+        onPressed: () => Navigator.pushNamed(context, SCREEN_FAVORITES),
       ),
       body: SafeArea(
           child: SingleChildScrollView(

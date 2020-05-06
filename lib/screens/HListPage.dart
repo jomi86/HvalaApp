@@ -1,5 +1,5 @@
+import 'package:Hvala/custom_widgets/row_button_actions_simple.dart';
 import 'package:Hvala/custom_widgets/row_button_expanded.dart';
-import 'package:Hvala/custom_widgets/row_button_simple.dart';
 import 'package:Hvala/models/model_page_arguments.dart';
 import 'package:Hvala/models/model_simple_list_item.dart';
 import 'package:Hvala/theme/HColors.dart';
@@ -50,13 +50,12 @@ class _HListPageState extends State<HListPage> {
                       urls.length,
                       (i) => urls[i].description != null
                           ? ExpandedRowButton(
-                              title: urls[i].name,
-                              subtitle: urls[i].description,
+                              item: urls[i],
                               onPressedAction: () {
                                 simpleItemAction(urls[i]);
                               })
-                          : SimpleRowButton(
-                              title: urls[i].name,
+                          : SimpleActionsRowButton(
+                              item: urls[i],
                               onPressedAction: () {
                                 simpleItemAction(urls[i]);
                               })))),

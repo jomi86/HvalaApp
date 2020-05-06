@@ -11,19 +11,18 @@
 
 import 'package:Hvala/screens/HListPage.dart';
 import 'package:Hvala/screens/page_donate_food.dart';
-import 'package:Hvala/screens/page_favorites.dart';
-import 'package:Hvala/screens/page_happy.dart';
-import 'package:Hvala/theme/HTheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'constants/screen_routes.dart';
 import 'screens/page_call.dart';
 import 'screens/page_donate.dart';
+import 'screens/page_favorites.dart';
 import 'screens/page_help.dart';
 import 'screens/page_learn.dart';
 import 'screens/page_need.dart';
 import 'screens/screen_app.dart';
+import 'theme/HTheme.dart';
 
 void main() => runApp(MyApp());
 
@@ -85,12 +84,6 @@ class MyApp extends StatelessWidget {
             case SCREEN_GENERIC_LIST:
               return CupertinoPageRoute(
                 builder: (context) => HListPage(),
-                fullscreenDialog: false,
-                settings: settings,
-              );
-            case SCREEN_HAPPY:
-              return CupertinoPageRoute(
-                builder: (context) => HappyPage(),
                 fullscreenDialog: false,
                 settings: settings,
               );

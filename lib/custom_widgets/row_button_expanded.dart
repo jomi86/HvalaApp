@@ -1,17 +1,15 @@
+import 'package:Hvala/models/model_simple_list_item.dart';
 import 'package:Hvala/theme/HColors.dart';
 import 'package:Hvala/theme/HTextStyles.dart';
+import 'package:Hvala/utils/favorite_helper.dart';
 import 'package:flutter/material.dart';
 
 class ExpandedRowButton extends StatelessWidget {
   final Function() onPressedAction;
-  final String title;
-  final String subtitle;
+  final SimpleListItem item;
 
   const ExpandedRowButton(
-      {@required this.onPressedAction,
-      @required this.title,
-      @required this.subtitle,
-      Key key})
+      {@required this.onPressedAction, @required this.item, Key key})
       : super(key: key);
 
   @override
@@ -20,7 +18,7 @@ class ExpandedRowButton extends StatelessWidget {
       children: <Widget>[
         Expanded(
           child: SizedBox(
-            height: 120,
+            height: 125,
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: RaisedButton(
@@ -30,12 +28,32 @@ class ExpandedRowButton extends StatelessWidget {
                   children: <Widget>[
                     Flexible(
                       flex: 1,
-                      child: Text(
-                        title.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 2,
-                        style: HTextStyle.buttonRegular(context),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: <Widget>[
+                          Flexible(
+                            flex: 8,
+                            child: Text(
+                              item.name.toUpperCase(),
+                              textAlign: TextAlign.left,
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                              style: HTextStyle.buttonRegular(context),
+                            ),
+                          ),
+                          Flexible(
+                            flex: 1,
+                            child: IconButton(
+                              icon: Icon(Icons.favorite_border),
+                              color: HColors.white(),
+                              iconSize: 24,
+                              onPressed: () {
+                                addToFavorites(item);
+                              },
+                            ),
+                          )
+                        ],
                       ),
                     ),
                     Divider(
@@ -45,8 +63,8 @@ class ExpandedRowButton extends StatelessWidget {
                     Flexible(
                       flex: 1,
                       child: Text(
-                        subtitle,
-                        textAlign: TextAlign.center,
+                        item.description,
+                        textAlign: TextAlign.left,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 3,
                         style: HTextStyle.buttonSmall(context),
