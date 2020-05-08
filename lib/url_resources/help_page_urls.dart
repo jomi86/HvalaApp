@@ -40,6 +40,13 @@ const List<Map<String, String>> help_page_urls = [
     "type": "url"
   },
   {
+    "name": "LICEULICE",
+    "description":
+        "LICEULICE je neprofitna organizacija posvećena podršci onima koji najteže dolaze do posla i koji žive na margini našeg društva.",
+    "url": "https://www.liceulice.org/",
+    "type": "url"
+  },
+  {
     "name": "Aplikacija 'SevApp'",
     "description": "Daruj ili potraži predmete ili usluge za sebe.",
     "url": "https://sevapp.rs/",

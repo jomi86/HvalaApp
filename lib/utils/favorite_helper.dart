@@ -1,37 +1,54 @@
+import 'dart:convert';
+
 import 'package:Hvala/constants/shared_prefs_constants.dart';
-import 'package:Hvala/models/model_array_simple_list_item.dart';
 import 'package:Hvala/models/model_simple_list_item.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 addToFavorites(SimpleListItem item) {
   _getFavorites().then((items) {
-    items.array.add(item);
+    if (!items.contains(item)) {
+      items.add(item);
+    }
     _saveFavorites(items);
   });
 }
 
 removeFromFavorites(SimpleListItem item) {
   _getFavorites().then((items) {
-    items.array.remove(item);
+    items.remove(item);
     _saveFavorites(items);
   });
 }
 
-Future<ArraySimpleListItem> getAllFavorites() {
+Future<bool> isInFavorites(SimpleListItem item) {
+  return _getFavorites().then((items) {
+    return items.contains(item);
+  });
+}
+
+Future<List<SimpleListItem>> getAllFavorites() {
   return _getFavorites();
 }
 
-Future<ArraySimpleListItem> _getFavorites() async {
+Future<List<SimpleListItem>> _getFavorites() async {
   SharedPreferences _prefs = await SharedPreferences.getInstance();
-  ArraySimpleListItem allItems;
+  List<SimpleListItem> allItems = [];
   if (_prefs.containsKey(FAVORITES_SHARED_PREFS_KEY)) {
-    allItems = ArraySimpleListItem.fromJsonString(
-        _prefs.getString(FAVORITES_SHARED_PREFS_KEY));
+//    var arraySimpleListItem = ArraySimpleListItem.fromJsonString(
+//        _prefs.getString(FAVORITES_SHARED_PREFS_KEY));
+    List<dynamic> a = json.decode(_prefs.getString(FAVORITES_SHARED_PREFS_KEY));
+    for (var obj in a) {
+      SimpleListItem item = SimpleListItem.fromJson(obj);
+      allItems.add(item);
+    }
+//    allItems.addAll(a);
+//    print("sdasd " + arraySimpleListItem.toJsonString());
   }
   return allItems;
 }
 
-_saveFavorites(ArraySimpleListItem all) async {
+_saveFavorites(List<SimpleListItem> all) async {
   SharedPreferences _prefs = await SharedPreferences.getInstance();
-  _prefs.setString(FAVORITES_SHARED_PREFS_KEY, all.toJsonString());
+  _prefs.remove(FAVORITES_SHARED_PREFS_KEY);
+  _prefs.setString(FAVORITES_SHARED_PREFS_KEY, json.encode(all));
 }

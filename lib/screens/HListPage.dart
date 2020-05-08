@@ -24,13 +24,6 @@ class _HListPageState extends State<HListPage> {
   _HListPageState(this.resourceUrl);
 
   @override
-  void initState() {
-    super.initState();
-//    urls = resourceUrl.map((data) => SimpleListItem.fromJson(data)).toList();
-//    urlsAll = List.of(urls);
-  }
-
-  @override
   Widget build(BuildContext context) {
     final PageArguments arguments = ModalRoute.of(context).settings.arguments;
     final List<Map<String, String>> resourceUrl = arguments.resource;
@@ -48,11 +41,14 @@ class _HListPageState extends State<HListPage> {
               child: Column(
                   children: new List.generate(
                       urls.length,
-                      (i) => urls[i].description != null
+                      (i) => urls[i].description.isEmpty == false
                           ? ExpandedRowButton(
                               item: urls[i],
                               onPressedAction: () {
                                 simpleItemAction(urls[i]);
+                              },
+                              onFavoritePressedAction: () {
+                                setState(() {});
                               })
                           : SimpleActionsRowButton(
                               item: urls[i],

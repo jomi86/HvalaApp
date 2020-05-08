@@ -4,13 +4,38 @@ import 'package:Hvala/theme/HTextStyles.dart';
 import 'package:Hvala/utils/favorite_helper.dart';
 import 'package:flutter/material.dart';
 
-class ExpandedRowButton extends StatelessWidget {
+class ExpandedRowButton extends StatefulWidget {
   final Function() onPressedAction;
+  final Function() onFavoritePressedAction;
   final SimpleListItem item;
 
   const ExpandedRowButton(
-      {@required this.onPressedAction, @required this.item, Key key})
+      {@required this.onPressedAction,
+      @required this.onFavoritePressedAction,
+      @required this.item,
+      Key key})
       : super(key: key);
+
+  @override
+  _ExpandedRowButtonState createState() => _ExpandedRowButtonState();
+}
+
+class _ExpandedRowButtonState extends State<ExpandedRowButton> {
+  bool addedToFavorites = false;
+
+  @override
+  void initState() {
+    super.initState();
+    isInFavorites(widget.item).then((value) {
+      _setFavorite(value);
+    });
+  }
+
+  _setFavorite(bool fav) {
+    setState(() {
+      addedToFavorites = fav;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +47,7 @@ class ExpandedRowButton extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.all(10.0),
               child: RaisedButton(
-                onPressed: onPressedAction,
+                onPressed: widget.onPressedAction,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
@@ -34,8 +59,9 @@ class ExpandedRowButton extends StatelessWidget {
                         children: <Widget>[
                           Flexible(
                             flex: 8,
+                            fit: FlexFit.tight,
                             child: Text(
-                              item.name.toUpperCase(),
+                              widget.item.name.toUpperCase(),
                               textAlign: TextAlign.left,
                               overflow: TextOverflow.ellipsis,
                               maxLines: 2,
@@ -45,11 +71,17 @@ class ExpandedRowButton extends StatelessWidget {
                           Flexible(
                             flex: 1,
                             child: IconButton(
-                              icon: Icon(Icons.favorite_border),
+                              icon: addedToFavorites
+                                  ? Icon(Icons.favorite)
+                                  : Icon(Icons.favorite_border),
                               color: HColors.white(),
                               iconSize: 24,
                               onPressed: () {
-                                addToFavorites(item);
+                                addedToFavorites
+                                    ? removeFromFavorites(widget.item)
+                                    : addToFavorites(widget.item);
+                                _setFavorite(!addedToFavorites);
+                                widget.onFavoritePressedAction();
                               },
                             ),
                           )
@@ -61,9 +93,9 @@ class ExpandedRowButton extends StatelessWidget {
                       color: HColors.dividerColor(),
                     ),
                     Flexible(
-                      flex: 1,
+                      flex: 2,
                       child: Text(
-                        item.description,
+                        widget.item.description,
                         textAlign: TextAlign.left,
                         overflow: TextOverflow.ellipsis,
                         maxLines: 3,

@@ -14,4 +14,11 @@ const List<Map<String, String>> donate_clothes_page_urls = [
     "url": "https://www.prihvatiliste.rs/index.html",
     "type": "url"
   },
+  {
+    "name": "Doniraj nameštaj ili uredjaj",
+    "description":
+        "Akcija kompanije IKEA koja pomaže da se stari nameštaj prosledi onima kojima je potrebno",
+    "url": "https://donirajnamestaj.rs/",
+    "type": "url"
+  }
 ];

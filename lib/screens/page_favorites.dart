@@ -19,7 +19,13 @@ class _FavoritesPageState extends State<FavoritesPage> {
   void initState() {
     super.initState();
     getAllFavorites().then((favorites) {
-      this.items = favorites.array;
+      _addItems(favorites);
+    });
+  }
+
+  _addItems(List<SimpleListItem> items) {
+    setState(() {
+      this.items.addAll(items);
     });
   }
 
@@ -37,7 +43,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
               child: Column(
                   children: new List.generate(
                       items.length,
-                      (i) => items[i].description != null
+                      (i) => items[i].description.isEmpty == false
                           ? ExpandedRowButton(
                               item: items[i],
                               onPressedAction: () {
