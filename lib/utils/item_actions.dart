@@ -21,11 +21,4 @@ openPage(BuildContext context, String page) {
 openPageWithResources(
     BuildContext context, String page, PageArguments arguments) {
   Navigator.pushNamed(context, page, arguments: arguments);
-//  Navigator.pushReplacement(
-//    context,
-//    MaterialPageRoute(
-//      fullscreenDialog: true,
-//      builder: (context) => HListPage(resourceUrl: resourceUrl),
-//    ),
-//  );
 }

@@ -10,17 +10,12 @@
 // bar items. The first one is selected.](https://flutter.github.io/assets-for-api-docs/assets/material/bottom_navigation_bar.png)
 
 import 'package:Hvala/screens/HListPage.dart';
-import 'package:Hvala/screens/page_donate_food.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'constants/screen_routes.dart';
-import 'screens/page_call.dart';
 import 'screens/page_donate.dart';
 import 'screens/page_favorites.dart';
-import 'screens/page_help.dart';
-import 'screens/page_learn.dart';
-import 'screens/page_need.dart';
 import 'screens/screen_app.dart';
 import 'theme/HTheme.dart';
 
@@ -48,36 +43,6 @@ class MyApp extends StatelessWidget {
             case SCREEN_DONATE:
               return MaterialPageRoute(
                 builder: (context) => PageDonate(),
-                fullscreenDialog: false,
-                settings: settings,
-              );
-            case SCREEN_HELP:
-              return CupertinoPageRoute(
-                builder: (context) => PageHelp(),
-                fullscreenDialog: false,
-                settings: settings,
-              );
-            case SCREEN_NEED:
-              return MaterialPageRoute(
-                builder: (context) => PageNeed(),
-                fullscreenDialog: false,
-                settings: settings,
-              );
-            case SCREEN_LEARN:
-              return CupertinoPageRoute(
-                builder: (context) => PageLearn(),
-                fullscreenDialog: false,
-                settings: settings,
-              );
-            case SCREEN_CALL:
-              return CupertinoPageRoute(
-                builder: (context) => PageCall(),
-                fullscreenDialog: false,
-                settings: settings,
-              );
-            case SCREEN_DONATE_FOOD:
-              return CupertinoPageRoute(
-                builder: (context) => PageDonateFood(),
                 fullscreenDialog: false,
                 settings: settings,
               );

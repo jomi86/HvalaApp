@@ -34,15 +34,11 @@ Future<List<SimpleListItem>> _getFavorites() async {
   SharedPreferences _prefs = await SharedPreferences.getInstance();
   List<SimpleListItem> allItems = [];
   if (_prefs.containsKey(FAVORITES_SHARED_PREFS_KEY)) {
-//    var arraySimpleListItem = ArraySimpleListItem.fromJsonString(
-//        _prefs.getString(FAVORITES_SHARED_PREFS_KEY));
     List<dynamic> a = json.decode(_prefs.getString(FAVORITES_SHARED_PREFS_KEY));
     for (var obj in a) {
       SimpleListItem item = SimpleListItem.fromJson(obj);
       allItems.add(item);
     }
-//    allItems.addAll(a);
-//    print("sdasd " + arraySimpleListItem.toJsonString());
   }
   return allItems;
 }
