@@ -71,14 +71,14 @@ class _ScreenAppState extends State<ScreenApp> {
                   PageArguments("Ekologija", eco_page_urls)),
             ),
             SimpleRowButton(
-              title: 'Saznaj nešto lepo danas :)'.toUpperCase(),
+              title: 'Saznaj nešto lepo danas'.toUpperCase(),
               onPressedAction: () => openPageWithResources(
                   context,
                   SCREEN_GENERIC_LIST,
                   PageArguments("Lepe vesti", happy_page_urls)),
             ),
             SizedBox(
-              height: 60,
+              height: 80,
             )
           ],
         ),
